@@ -1,0 +1,178 @@
+/* ============================================================
+   Oleksii Chepurniak — CV stylesheet
+   One A4 sheet: dark sidebar + content column.
+   Geometry lives in the base rules so print output is exact;
+   @media screen only adds on-screen framing.
+   ============================================================ */
+
+/* ---------- design tokens ---------- */
+:root {
+  /* content column */
+  --ink:            #1f2430;
+  --ink-strong:     #2e2a4a;
+  --ink-muted:      #6b7280;
+  --accent:         #4b4f9e;
+  --rule:           #d5d2e0;
+
+  /* sidebar */
+  --side-bg:        #322c52;
+  --side-ink:       #cfcbdd;
+  --side-ink-dim:   #c3bed6;
+  --side-rule:      #4d4675;
+  --side-role:      #b9b3d0;
+  --side-role-em:   #ded9ee;
+
+  /* sheet geometry */
+  --sheet-w:        210mm;
+  --sheet-h:        297mm;
+  --sidebar-w:      60mm;
+
+  --font:           "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+/* ---------- reset ---------- */
+*        { box-sizing: border-box; margin: 0; padding: 0; }
+html,
+body     { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+body     { font-family: var(--font); font-size: 7.9pt; line-height: 1.36; color: var(--ink); }
+ul       { list-style: none; }
+a        { color: inherit; text-decoration: none; }
+
+@page { size: A4; margin: 0; }
+
+/* ---------- sheet ---------- */
+.sheet {
+  display: flex;
+  width: var(--sheet-w);
+  height: var(--sheet-h);
+  overflow: hidden;
+  background: #fff;
+}
+
+/* ============================================================
+   Sidebar
+   ============================================================ */
+.sidebar {
+  width: var(--sidebar-w);
+  padding: 11mm 6mm 8mm 7mm;
+  background: var(--side-bg);
+  color: var(--side-ink);
+}
+
+.sidebar .name {
+  font-size: 18pt;
+  font-weight: 700;
+  line-height: 1.12;
+  letter-spacing: 1.6px;
+  color: #fff;
+}
+
+.sidebar .role {
+  margin-top: 5px;
+  font-size: 7.8pt;
+  letter-spacing: .2px;
+  color: var(--side-role);
+}
+.sidebar .role b { font-weight: 600; color: var(--side-role-em); }
+
+.sidebar h2 {
+  margin: 9px 0 5px;
+  padding-top: 7px;
+  border-top: 1px solid var(--side-rule);
+  font-size: 8.6pt;
+  font-weight: 700;
+  letter-spacing: 2.4px;
+  color: #fff;
+}
+
+.sidebar h3 {
+  margin: 5px 0 1px;
+  font-size: 7.4pt;
+  font-weight: 700;
+  letter-spacing: .8px;
+  color: #fff;
+}
+.sidebar h3:first-of-type { margin-top: 0; }
+
+.sidebar p        { margin-bottom: 2.5px; font-size: 7.9pt; }
+.sidebar h3 + p   { margin-bottom: 0; font-size: 7.2pt; line-height: 1.36; color: var(--side-ink-dim); }
+
+/* ============================================================
+   Content column
+   ============================================================ */
+.content {
+  flex: 1;
+  padding: 11mm 9mm 6mm 9mm;
+  font-size: 9.2pt;
+  line-height: 1.42;
+}
+
+.content h2 {
+  margin: 10px 0 5px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid var(--rule);
+  font-size: 11.2pt;
+  font-weight: 700;
+  letter-spacing: 2.2px;
+  color: var(--ink-strong);
+}
+.content > h2:first-child { margin-top: 0; }
+
+.profile { margin-bottom: 2px; }
+
+/* ---------- one project / school ---------- */
+.entry            { margin-top: 10px; }
+.entry:first-of-type { margin-top: 5px; }
+
+.entry-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+.entry-head .title {
+  font-size: 11.2pt;
+  font-weight: 700;
+  color: var(--ink-strong);
+}
+.entry-head .duration {
+  padding-left: 8px;
+  font-size: 8.6pt;
+  font-weight: 600;
+  white-space: nowrap;
+  color: var(--ink-muted);
+}
+
+.meta    { margin-top: 1px; font-size: 8.5pt; color: var(--ink-muted); }
+.summary { margin-top: 2px; font-size: 8.5pt; color: #3d4250; }
+
+.stack {
+  margin-top: 3px;
+  font-size: 8pt;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--accent);
+}
+.stack b { font-weight: 700; color: var(--ink-strong); }
+
+.entry ul { margin-top: 5px; }
+.entry li {
+  position: relative;
+  margin-bottom: 4.5px;
+  padding-left: 12px;
+}
+.entry li::before { content: "\2022"; position: absolute; left: 0; color: var(--ink-muted); }
+.entry li b       { color: var(--ink-strong); }
+
+/* ============================================================
+   On-screen only: frame the sheet, stay readable on phones
+   ============================================================ */
+@media screen {
+  body  { background: #e9e7ef; padding: 24px 12px; }
+  .sheet { margin: 0 auto; box-shadow: 0 2px 18px rgba(31, 36, 48, .22); }
+}
+
+@media screen and (max-width: 820px) {
+  .sheet    { flex-direction: column; width: 100%; height: auto; }
+  .sidebar  { width: 100%; padding: 24px 20px; }
+  .content  { padding: 24px 20px 32px; }
+}

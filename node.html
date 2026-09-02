@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Oleksii Chepurniak — Fullstack Node.js / React Developer</title>
+  <meta name="description" content="CV of Oleksii Chepurniak, middle fullstack developer: Node.js, Bun, Hono, NestJS, PostgreSQL, React 19.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="sheet">
+
+<aside class="sidebar">
+  <h1 class="name">OLEKSII<br>CHEPURNIAK</h1>
+  <p class="role"><b>Middle Fullstack Node.js / React Developer</b><br>3+ years of experience</p>
+
+  <h2>CONTACT</h2>
+  <p>+380 75 545 12 27</p>
+  <p>4booser@gmail.com</p>
+  <p>github.com/4booser</p>
+  <p>linkedin.com/in/oleksii-chepurniak</p>
+  <p>Telegram: @abooser</p>
+  <p>Kyiv, Ukraine &middot; Remote / Hybrid</p>
+  <p>Full-time / Part-time</p>
+
+  <h2>TECHNICAL SKILLS</h2>
+  <h3>BACKEND &mdash; NODE.JS / TYPESCRIPT</h3>
+  <p>Node.js, Bun, TypeScript, NestJS, Hono, Express, REST API design, modular architecture and DI, JWT access/refresh, Google OAuth via Passport, RBAC and shared permission contracts, throttling and rate limiting, Zod validation, scheduled jobs, file parsing (XLSX, PDF, XML), OpenAPI</p>
+  <h3>FRONTEND</h3>
+  <p>React 19, TypeScript, Vite, React Router, TanStack Query / Router, Tailwind CSS, shadcn/ui + Radix, Recharts and d3, CodeMirror, i18next, React Native with Expo, responsive mobile-first layouts, light/dark theming, PWA</p>
+  <h3>DATA</h3>
+  <p>PostgreSQL 16 / 17, Drizzle ORM, postgres.js, SQL migrations, hand-written SQL, joins, indexes, transactions, query plans, Redis</p>
+  <h3>ARCHITECTURE</h3>
+  <p>Monorepo workspaces (npm, pnpm, Bun), shared type and schema packages between server and clients, layered and modular services, SOLID, DRY, KISS</p>
+  <h3>AI INTEGRATION</h3>
+  <p>OpenAI, Anthropic and Gemini SDKs, tool calling, prompt design, guardrails and SQL validation over model-generated queries</p>
+  <h3>TESTING</h3>
+  <p>Jest, supertest, bun test, Vitest, Playwright E2E, axe accessibility checks, Biome and ESLint</p>
+  <h3>DEVOPS &amp; TOOLS</h3>
+  <p>Docker, Docker Compose, Nginx, GitHub Actions, VPS deploy and rollback scripts, Linux / Bash (Arch), SSH, Git, Postman, curl, pgAdmin, VS Code</p>
+  <h3>AI-ASSISTED DEV</h3>
+  <p>Claude Code and OpenAI Codex in the daily loop &mdash; scaffolding, refactoring, test generation and code review; generated code is read and checked against project architecture before it is merged</p>
+
+  <h2>LANGUAGES</h2>
+  <p>Ukrainian &mdash; Native</p>
+  <p>English &mdash; B2</p>
+</aside>
+
+<main class="content">
+  <h2>PROFILE</h2>
+  <p class="profile"><b>3+ years</b> of fullstack development on TypeScript. I design and deliver production systems end to end: relational schema and migrations, REST API, web and mobile clients, authentication and authorisation, test coverage, containerisation and deployment to a live VPS.</p>
+  <p class="profile">Primary stack: Node.js and Bun with Hono or NestJS over PostgreSQL, React 19 with Vite. 99k lines of TypeScript in production, under 1&nbsp;400+ automated tests.</p>
+
+  <h2>PROJECT EXPERIENCE</h2>
+
+  <article class="entry">
+    <header class="entry-head"><h3 class="title">Quizzy &mdash; Clinical Assessment Platform</h3><span class="duration">7 months</span></header>
+    <p class="meta">Fullstack Developer &middot; monorepo: API, web console, mobile app &middot; github.com/4booser/Quizzy</p>
+    <p class="summary">Psychodiagnostics for inpatient units: assessment delivery, automated scoring against interpretation norms, alert triage and access audit.</p>
+    <p class="stack"><b>Server</b> Bun &middot; Hono &middot; Drizzle ORM &middot; PostgreSQL 16 &middot; TypeScript &middot; Zod &middot; JWT &middot; nodemailer &middot; OpenAPI<br><b>Clients</b> React &middot; Vite &middot; React Router &middot; Radix UI &middot; TanStack Virtual &middot; d3 &middot; React Native (Expo SDK 57) &middot; expo-router<br><b>Quality &amp; infra</b> bun test &middot; Playwright &middot; axe-core &middot; Biome &middot; Docker Compose</p>
+    <ul>
+      <li><b>Architecture</b> &mdash; Bun workspace monorepo, 78k lines of TypeScript: one API serving an 80-screen staff console and a 25-screen Expo patient app, with a shared core package consumed by all three.</li>
+      <li><b>API</b> &mdash; Hono over Drizzle and PostgreSQL 16: 49 route modules across 76 tables covering assessment batteries, sections, scales with interpretation bands, conditional question logic, scheduling, alerts, referrals, reporting and SPSS export.</li>
+      <li><b>Shared core</b> &mdash; 102 Zod schemas, the permission matrix, scoring and psychometrics (norms, equating, reliable change index) implemented once and reused by server, web and mobile, so validation cannot drift between tiers.</li>
+      <li><b>Access control</b> &mdash; role hierarchy, per-patient assignment with expiry and revocation re-checked on every request, break-glass escalation, field-level encryption and a hash-chained audit journal with a CLI verifier.</li>
+      <li><b>Mobile</b> &mdash; Expo client with biometric unlock, secure token storage, push notifications and offline-tolerant submission; two-language UI from a shared string catalogue.</li>
+      <li><b>Quality</b> &mdash; 687 test cases across 52 files under bun test, Playwright end-to-end suites, axe accessibility checks, Biome lint and strict TypeScript across all workspaces.</li>
+    </ul>
+  </article>
+
+  <article class="entry">
+    <header class="entry-head"><h3 class="title">Shifter &mdash; Shift &amp; Payroll Platform</h3><span class="duration">6 months</span></header>
+    <p class="meta">Fullstack Developer &middot; production web application &middot; github.com/4booser/Shifter</p>
+    <p class="summary">Shift planning and payroll for hourly-paid staff: schedules, real earnings with overtime, tips and deductions, analytics and payouts.</p>
+    <p class="stack"><b>Client</b> React 19 &middot; TypeScript &middot; Vite &middot; TanStack Router / Query &middot; Tailwind 4 &middot; shadcn/ui (Radix) &middot; Zustand &middot; Vitest &middot; PWA<br><b>Server &amp; infra</b> PostgreSQL 17 &middot; REST API &middot; Docker Compose &middot; GitHub Actions &middot; Caddy &middot; VPS</p>
+    <ul>
+      <li><b>Client</b> &mdash; 12 routes and 24 components on TanStack Router with a TanStack Query cache, Tailwind 4 and shadcn/ui; mobile-first, light and dark themes, installable as a PWA.</li>
+      <li><b>Offline</b> &mdash; IndexedDB write queue keyed by date that flushes on reconnect and separates transport failure from server rejection; client-side CSV and XLSX parsing, ICS calendar export.</li>
+      <li><b>Server</b> &mdash; designed and built the REST API and PostgreSQL schema myself, including the payroll engine (overtime, salary periods, tip-out, deductions, tax) under 718 automated tests.</li>
+      <li><b>Delivery</b> &mdash; 4-service Docker Compose stack, full suite on every push through GitHub Actions, Caddy with automatic TLS, immutable tagged images and single-command rollback.</li>
+    </ul>
+  </article>
+
+  <h2>EDUCATION</h2>
+  <article class="entry">
+    <header class="entry-head"><h3 class="title">Bachelor's Degree &mdash; Software Engineering (121)</span></header>
+    <p class="meta">National Transport University, Kyiv</p>
+  </article>
+</main>
+
+</div>
+</body>
+</html>

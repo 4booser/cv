@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Oleksii Chepurniak — CV</title>
+  <meta name="description" content="Middle fullstack developer. Two CVs: .NET / React and Node.js / React.">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .landing { max-width: 640px; margin: 0 auto; padding: 48px 20px 64px; }
+    .landing h1 { font-size: 22pt; letter-spacing: 1.6px; line-height: 1.15; color: var(--ink-strong); }
+    .landing .role    { margin-top: 8px; font-size: 11pt; color: var(--ink-muted); }
+    .landing .contact { margin-top: 6px; font-size: 10pt; color: var(--ink-muted); }
+    .landing .contact a { text-decoration: underline; }
+
+    .cards { display: grid; gap: 14px; margin-top: 28px; }
+    .card {
+      display: block;
+      padding: 18px 20px;
+      border: 1px solid var(--rule);
+      border-radius: 6px;
+      background: #fff;
+      transition: border-color .15s, box-shadow .15s;
+    }
+    .card:hover { border-color: var(--accent); box-shadow: 0 2px 12px rgba(31, 36, 48, .10); }
+    .card h2      { font-size: 13pt; font-weight: 700; color: var(--ink-strong); }
+    .card p       { margin-top: 5px; font-size: 10pt; line-height: 1.5; }
+    .card .stack  { margin-top: 8px; font-size: 9pt; }
+    .card .links  { margin-top: 12px; font-size: 9.5pt; font-weight: 600; color: var(--accent); }
+
+    @media screen { body { padding: 0; background: #e9e7ef; } }
+  </style>
+</head>
+<body>
+  <div class="landing">
+    <h1>OLEKSII CHEPURNIAK</h1>
+    <p class="role">Middle Fullstack Developer &middot; 3+ years of experience &middot; Kyiv, Ukraine &middot; Remote / Hybrid</p>
+    <p class="contact">
+      <a href="mailto:4booser@gmail.com">4booser@gmail.com</a> &middot;
+      <a href="https://github.com/4booser">github</a> &middot;
+      <a href="https://linkedin.com/in/oleksii-chepurniak">linkedin</a> &middot;
+      <a href="https://t.me/abooser">telegram</a>
+    </p>
+
+    <div class="cards">
+      <div class="card">
+        <h2>Fullstack .NET / React</h2>
+        <p>Shift &amp; payroll platform in production, restaurant back-office API.</p>
+        <p class="stack">ASP.NET Core &middot; EF Core &middot; PostgreSQL &middot; MediatR &middot; React 19 &middot; TanStack &middot; Tailwind &middot; Docker</p>
+        <p class="links"><a href="dotnet.html">Read online</a> &nbsp;&middot;&nbsp; <a href="cv-dotnet.pdf">Download PDF</a></p>
+      </div>
+
+      <div class="card">
+        <h2>Fullstack Node.js / React</h2>
+        <p>Clinical assessment platform (API, web console, Expo app) and a shift &amp; payroll platform.</p>
+        <p class="stack">Bun &middot; Hono &middot; NestJS &middot; Drizzle &middot; PostgreSQL &middot; React 19 &middot; React Native &middot; Playwright</p>
+        <p class="links"><a href="node.html">Read online</a> &nbsp;&middot;&nbsp; <a href="cv-node.pdf">Download PDF</a></p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
