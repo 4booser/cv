@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Oleksii Chepurniak — Backend .NET Developer</title>
+  <meta name="description" content="CV of Oleksii Chepurniak, middle backend developer: C#, ASP.NET Core, EF Core, PostgreSQL, MediatR, Docker.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="sheet">
+
+<aside class="sidebar">
+  <h1 class="name">OLEKSII<br>CHEPURNIAK</h1>
+  <p class="role"><b>Middle Backend .NET Developer</b><br>3+ years of experience</p>
+
+  <h2>CONTACT</h2>
+  <p>+380 75 545 12 27</p>
+  <p>4booser@gmail.com</p>
+  <p>github.com/4booser</p>
+  <p>linkedin.com/in/oleksii-chepurniak</p>
+  <p>Telegram: @abooser</p>
+  <p>Kyiv, Ukraine &middot; Remote / Hybrid</p>
+  <p>Full-time / Part-time</p>
+
+  <h2>TECHNICAL SKILLS</h2>
+  <h3>C# / .NET</h3>
+  <p>C# 13, .NET 9 / 10, ASP.NET Core Web API, Controllers, Minimal API, Middleware, hosted and background services, DI, Options pattern, async/await, CancellationToken, LINQ, records, source generators</p>
+  <h3>API &amp; AUTH</h3>
+  <p>REST API design, versioning and DTO contracts, JWT access/refresh with rotation, Google OAuth / OpenID Connect, BCrypt, roles and claims, policy-based authorisation, API-key auth, rate limiting, request validation, global exception handling, Swagger/OpenAPI, SignalR real-time hubs</p>
+  <h3>DATA</h3>
+  <p>EF Core, code-first migrations, DbContext, Fluent API, change tracking, PostgreSQL / Npgsql, MySQL, SQLite, Redis, hand-written SQL, joins, indexes, transactions, isolation levels, query plans</p>
+  <h3>ARCHITECTURE</h3>
+  <p>Clean and layered architecture, CQRS with MediatR, repository and service patterns, domain entities and value objects, aggregate boundaries, SOLID, DRY, KISS</p>
+  <h3>TESTING</h3>
+  <p>xUnit, Moq, unit and integration testing, in-memory and substituted repositories, test-first on domain rules</p>
+  <h3>DEVOPS &amp; OBSERVABILITY</h3>
+  <p>Docker, Docker Compose, GitHub Actions, GitLab CI/CD, Caddy / Nginx reverse proxy, VPS deploy and rollback, Serilog structured logging, health checks, Linux / Bash (Arch), SSH, Git, Postman, curl, pgAdmin, Rider, VS Code</p>
+  <h3>FRONTEND</h3>
+  <p>Working knowledge of React 19, TypeScript, Vite, TanStack Query and Tailwind &mdash; enough to build and debug the client that consumes my API</p>
+  <h3>AI-ASSISTED DEV</h3>
+  <p>Claude Code and OpenAI Codex in the daily loop — scaffolding, refactoring, test generation and code review; generated code is read and checked against project architecture before it is merged</p>
+
+  <h2>LANGUAGES</h2>
+  <p>Ukrainian &mdash; Native</p>
+  <p>English &mdash; B2</p>
+</aside>
+
+<main class="content">
+  <h2>PROFILE</h2>
+  <p class="profile"><b>3+ years</b> of backend development on C# and ASP.NET Core. I own services end to end: domain model, relational schema and migrations, REST API, authentication and authorisation, business-rule test coverage, containerisation and deployment to a live VPS.</p>
+  <p class="profile">Primary stack: ASP.NET Core over PostgreSQL with EF Core and MediatR. 37k lines of C# in production, under 718 xUnit cases.</p>
+
+  <h2>PROJECT EXPERIENCE</h2>
+
+  <article class="entry">
+    <header class="entry-head"><h3 class="title">Shifter &mdash; Shift &amp; Payroll Platform</h3><span class="duration">6 months</span></header>
+    <p class="meta">Backend Developer &middot; production REST API &middot; github.com/4booser/Shifter</p>
+    <p class="summary">Shift planning and payroll for hourly-paid staff: schedules, real earnings with overtime, tips and deductions, analytics and payouts.</p>
+    <p class="stack"><b>Stack</b> ASP.NET Core 10 &middot; C# &middot; EF Core 10 &middot; PostgreSQL 17 / Npgsql &middot; MediatR &middot; JWT &middot; BCrypt &middot; Serilog &middot; QuestPDF &middot; Web Push &middot; Swagger / OpenAPI &middot; xUnit &middot; Docker Compose &middot; GitHub Actions &middot; Caddy</p>
+    <ul>
+      <li><b>Architecture</b> &mdash; Clean Architecture across Domain, Application, Infrastructure and Api projects with dependencies pointing inwards; MediatR request pipeline over repository abstractions and DTO boundaries. 208 endpoints on 30 controllers, 64 entities, 99 EF Core migrations.</li>
+      <li><b>Data</b> &mdash; two DbContexts on separate PostgreSQL databases for business data and tokens; code-first migrations applied by a dedicated container gated on a database healthcheck, so the API can never start against a stale schema.</li>
+      <li><b>Domain</b> &mdash; payroll computed entirely server-side: ISO-week overtime scoped per workplace, weekly and monthly salary periods, tip-out, meal deductions, proportional split of tips and sales across workplaces, tax base and vacation accrual. Conditions are snapshotted onto the day, so editing a template never rewrites history. 718 xUnit cases over 92 files.</li>
+      <li><b>Security</b> &mdash; JWT access/refresh with rotation, Google ID-token sign-in, BCrypt hashing, rate limiting; identity resolved from claims only and never from the request body, uniform error contract across 400/401/403/404/409/429, with 404 on foreign resources to prevent enumeration.</li>
+      <li><b>Integrations</b> &mdash; token-scoped inbound webhooks typed as sales, hours or both, with a 50-entry delivery log and replay, so a leaked POS key cannot touch the schedule; QuestPDF reports, Web Push notifications, ICS and CSV/XLSX exchange.</li>
+      <li><b>Observability</b> &mdash; Serilog sinks, global exception middleware returning one envelope for every failure, health checks over both databases.</li>
+      <li><b>Delivery</b> &mdash; 4-service Docker Compose stack, GitHub Actions on every push, Caddy with automatic TLS, immutable tagged images shared by app and migrator, single-command rollback.</li>
+    </ul>
+  </article>
+
+  <article class="entry">
+    <header class="entry-head"><h3 class="title">Cafe &mdash; Restaurant Back-Office API</h3><span class="duration">8 months</span></header>
+    <p class="meta">Backend Developer &middot; REST API &middot; github.com/4booser/Cafe</p>
+    <p class="summary">Operations backend for cafe and restaurant chains: ownership hierarchy, staff and access, menus, orders, stock and recipe costing.</p>
+    <p class="stack"><b>Stack</b> ASP.NET Core 9 &middot; C# &middot; EF Core &middot; PostgreSQL / Npgsql &middot; MediatR &middot; JWT &middot; BCrypt &middot; Serilog &middot; Swagger / OpenAPI &middot; Twilio &middot; Docker</p>
+    <ul>
+      <li><b>Domain</b> &mdash; 24 entities across 7 aggregates: company ownership, venues, staff with roles and permissions, menus, orders, shifts, warehouses with ingredients and technical cards for recipe costing.</li>
+      <li><b>Architecture</b> &mdash; layered API with MediatR commands and handlers, repository abstractions, DTO boundaries and structured response envelopes; 3 DbContexts with separate connection strings for business data, tokens and logs, migrated on startup.</li>
+      <li><b>Security &amp; ops</b> &mdash; JWT Bearer with claims and access/refresh flow, permission-secured endpoints; global exception middleware, Serilog sinks, Swagger contract, Twilio SMS.</li>
+    </ul>
+  </article>
+
+  <h2>EDUCATION</h2>
+  <article class="entry">
+    <header class="entry-head"><h3 class="title">Bachelor's Degree &mdash; Software Engineering (121)</h3></header>
+    <p class="meta">National Transport University, Kyiv</p>
+  </article>
+</main>
+
+</div>
+</body>
+</html>
