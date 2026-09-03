@@ -1,15 +1,17 @@
 # CV — Oleksii Chepurniak
 
-Three one-page CVs sharing one stylesheet.
+Four one-page CVs sharing one stylesheet.
 
 ```
-index.html      landing page with links to all three
+index.html      landing page with links to all four
 backend.html    Backend .NET
 dotnet.html     Fullstack .NET / React
+angular.html    Fullstack .NET / Angular
 node.html       Fullstack Node.js / React
 style.css       shared styles (screen + print)
 cv-backend.pdf  generated from backend.html
 cv-dotnet.pdf   generated from dotnet.html
+cv-angular.pdf  generated from angular.html
 cv-node.pdf     generated from node.html
 ```
 
